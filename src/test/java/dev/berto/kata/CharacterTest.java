@@ -79,5 +79,13 @@ public class CharacterTest {
         assertEquals(800, target.getHealth());
     }
 
+    @Test
+    @DisplayName("Test that the character cannot deal damage to itself")
+    public void testCannotDealDamageToSelf() {
+        Character character = new Character();
+        character.dealDamage(character, 100);
+        assertEquals(1000, character.getHealth());
+    }
+
 
 }
