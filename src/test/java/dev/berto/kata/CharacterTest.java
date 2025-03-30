@@ -1,14 +1,20 @@
 package dev.berto.kata;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class CharacterTest {
     
-    @Test
-    public void ExampleTest() {
-        assertEquals(2, 2);
+     @Test
+    @DisplayName("Test that the character is created wit the expected characteristics")
+    public void testCharacterCreatedAsExpected() {
+        Character character = new Character();
+        assertEquals(1000, character.getHealth());
+        assertEquals(1, character.getLevel());
+        assertTrue(character.isAlive());
     }
 
 }
