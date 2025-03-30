@@ -44,7 +44,16 @@ public class CharacterTest {
 
         character.setLevel(1001);
         assertTrue(character.getLevel() <= 30);
+    }
 
+    @Test
+    @DisplayName("Edge case 3: Test that the character is alive or dead")
+    public void testCharacterStatus() {
+        Character character = new Character();
+        assertTrue(character.isAlive());
+
+        character.setHealth(0);
+        assertFalse(character.isAlive());
     }
 
 
