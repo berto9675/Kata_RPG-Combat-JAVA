@@ -1,4 +1,4 @@
-package dev.berto.kata;
+package dev.berto.rna;
 
 /**
  * Hello world!
