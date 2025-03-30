@@ -97,6 +97,21 @@ public class CharacterTest {
         assertEquals(800, character2.getHealth());
     }
 
+    @Test
+    @DisplayName("Test that the character's damage is adjusted by their level")
+    public void testDamageAdjustmentByLevel() {
+    Character lowLevelChar = new Character();
+    lowLevelChar.setLevel(1);
+    Character highLevelChar = new Character();
+    highLevelChar.setLevel(6);
+
+    lowLevelChar.dealDamage(highLevelChar, 100);
+    assertEquals(950, highLevelChar.getHealth());
+
+    highLevelChar.dealDamage(lowLevelChar, 100);
+    assertEquals(850, lowLevelChar.getHealth());
+}
+
 
 
 }
