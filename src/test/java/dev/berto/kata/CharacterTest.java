@@ -87,5 +87,16 @@ public class CharacterTest {
         assertEquals(1000, character.getHealth());
     }
 
+    @Test
+    @DisplayName("Test that the character cannot heal itself")
+    public void testOnlyHealSelf() {
+        Character character1 = new Character();
+        Character character2 = new Character();
+        character1.dealDamage(character2, 200);
+        character1.heallife(character2, 100);
+        assertEquals(800, character2.getHealth());
+    }
+
+
 
 }
