@@ -1,4 +1,4 @@
-package com.factoriaf5.kata;
+package dev.berto.kata;
 
 import org.junit.jupiter.api.Test;
 
