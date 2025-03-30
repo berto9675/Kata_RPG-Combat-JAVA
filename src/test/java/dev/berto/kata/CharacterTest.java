@@ -55,6 +55,15 @@ public class CharacterTest {
         character.setHealth(0);
         assertFalse(character.isAlive());
     }
+    @Test
+    @DisplayName("Test that the character can deal damage to another character")
+    public void testDealDamage() {
+        Character attacker = new Character();
+        Character target = new Character();
+
+        attacker.dealDamage(target, 200);
+        assertEquals(800, target.getHealth());
+    }
 
 
 }
