@@ -33,5 +33,19 @@ public class CharacterTest {
         assertTrue(character.getHealth() >= 0);
     }
 
+    @Test
+    @DisplayName("Edge case 2: Test limits of the character's level")
+    public void testCharacterLevelLimits() {
+        Character character = new Character();
+        assertEquals(1, character.getLevel());
+
+        character.setLevel(-1);
+        assertTrue(character.getLevel() >= 1);
+
+        character.setLevel(1001);
+        assertTrue(character.getLevel() <= 30);
+
+    }
+
 
 }
