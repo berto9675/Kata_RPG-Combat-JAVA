@@ -65,5 +65,19 @@ public class CharacterTest {
         assertEquals(800, target.getHealth());
     }
 
+    @Test
+    @DisplayName("Test that the character can heal another character")
+    public void testHeal() {
+        Character healer = new Character();
+        Character target = new Character();
+
+        healer.dealDamage(target, 200);
+        healer.heallife(target, 100);
+        assertEquals(800, target.getHealth());
+
+        healer.heallife(target,200);
+        assertEquals(800, target.getHealth());
+    }
+
 
 }
