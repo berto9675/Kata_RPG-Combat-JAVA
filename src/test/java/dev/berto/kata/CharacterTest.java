@@ -143,8 +143,18 @@ public class CharacterTest {
         char1.heallife(char2, 100);
         assertEquals(900, char2.getHealth());
     }
+    @Test
+    @DisplayName("Test that the character's damage is adjusted by their ally status")
+    public void testNonCharacterTarget() {
+        Character char1 = new Character();
+        Target tree = new Target(2000);
 
+        char1.dealDamage(tree, 1000);
+        assertEquals(1000, tree.getHealth());
+        assertFalse(tree.isDestroyed());
 
-
-
+        char1.dealDamage(tree, 1000);
+        assertEquals(0, tree.getHealth());
+        assertTrue(tree.isDestroyed());
+    }
 }
